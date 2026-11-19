@@ -77,7 +77,7 @@ document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',(
 const toolNames={bio:'Artist Bio Generator',caption:'Social Caption Generator',press:'Press Release Generator',plan:'30-Day Release Planner'};
 document.querySelectorAll('.sideitem').forEach(el=>el.addEventListener('click',()=>{document.querySelectorAll('.sideitem').forEach(x=>x.classList.remove('active'));el.classList.add('active');currentTool=el.dataset.tool;$('toolTitle').textContent=toolNames[currentTool];$('output').textContent='Scegli i dettagli e genera il tuo contenuto.';$('output').classList.add('empty');}));
 function val(id,fallback){return $(id).value.trim()||fallback}
-async async function generate(){
+async function generate(){
  const artist=val('artist',''),genre=val('genre',''),mood=val('mood',''),release=val('release',''),details=$('details').value.trim();
  if(!artist){toast('Inserisci il nome artista.');$('artist').focus();return;}
  const button=$('generate');
